@@ -18,6 +18,7 @@ public class ToDoClient {
     }
 
     public List<ToDo> findAll(){
+        // when we execute this we follow the url that we get
         return restTemplate.exchange(
                 "https://jsonplaceholder.typicode.com/todos",   // the URI with and the added URI
                 HttpMethod.GET,  // the http method
