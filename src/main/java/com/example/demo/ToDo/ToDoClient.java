@@ -13,7 +13,7 @@ import java.util.List;
 public class ToDoClient {
     private RestTemplate restTemplate;
 
-    public ToDoClient(RestTemplateBuilder builder) {
+    public ToDoClient(RestTemplateBuilder builder) {  // todo : be careful about RestTemplateBuilder
         this.restTemplate = builder.build();    // for instantiating RestTemplate
     }
 

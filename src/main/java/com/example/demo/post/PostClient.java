@@ -12,7 +12,7 @@ public class PostClient {
 
     private final RestClient restClient;
 
-    public PostClient(RestClient.Builder builder) {  // todo : be careful about RestClient.Builder
+    public PostClient(RestClient.Builder builder) {  // todo: be careful about RestClient.Builder
         this.restClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
                 .build();
@@ -22,12 +22,8 @@ public class PostClient {
         return restClient.get()
                 .uri("/posts")
                 .retrieve()
-                .body(new ParameterizedTypeReference<>() {} /** you can have without Pst class*/
-                );
+                .body(new ParameterizedTypeReference<>() {} ); /** you can have without Pst class*/
+
     }
-
-
-
-
 
 }
