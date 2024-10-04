@@ -12,6 +12,7 @@ public class PostClient {
 
     private final RestClient restClient;
 
+    // i think because of @Component it will execute
     public PostClient(RestClient.Builder builder) {  // todo: be careful about RestClient.Builder
         this.restClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
@@ -22,8 +23,7 @@ public class PostClient {
         return restClient.get()
                 .uri("/posts")
                 .retrieve()
-                .body(new ParameterizedTypeReference<>() {} ); /** you can have without Pst class*/
-
+                .body(new ParameterizedTypeReference<>() {} ); /** you can have without Post class*/
     }
 
 }

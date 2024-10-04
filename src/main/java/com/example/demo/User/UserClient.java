@@ -10,6 +10,7 @@ public class UserClient {
     //for using webClient you should have Spring reactive web dependency
     private WebClient webClient;
 
+    // i think because of @Component it will execute
     public UserClient(WebClient.Builder builder) { // todo : be careful about WebClient.Builder
         this.webClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
@@ -24,12 +25,12 @@ public class UserClient {
     }
 
 
-//    public User findOne(){
-//        return webClient.get()
-//                .uri("/users/1")
-//                .retrieve()
-//                .bodyToMono(User.class) // return the content to on object
-//                .block(); //
-//    }
+    public User findOne(){
+        return webClient.get()
+                .uri("/users/1")
+                .retrieve()
+                .bodyToMono(User.class) // return the content to on object
+                .block(); //
+    }
 
 }
